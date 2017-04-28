@@ -7,6 +7,14 @@
   font-weight: bold;
 }
 
+.form-group {
+  margin-bottom: 50px;
+}
+
+.form-group h2 {
+  margin-bottom: 20px;
+}
+
 #design, #php, #c, #ruby, #java, #design-caveat {
   display: none;
 }
@@ -35,10 +43,10 @@
   box-shadow: inset 1px 1px 1px grey;
 }
 
-.progress-indicator:nth-child(5) {
-  border-radius: 0 20px 20px 0;
-}
-
 .progress-indicator:first-child {
   border-radius: 20px 0 0 20px;
+}
+
+.progress-indicator:nth-child(5) {
+  border-radius: 0 20px 20px 0;
 }

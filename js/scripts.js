@@ -67,13 +67,18 @@ $(document).ready(function() {
       //then reassign the value in the questions object to the value of the question
       //asked if passes validation
       //create error at top of page saying to fill out all questions if fail/remove if pass
+      //if any fail validation, flag a failure and return
+    var failed;
+
     for (var key in questions) {
       if (questions[key].val() === undefined) {
+        failed = true;
         $('input[name="' + key + '"]').parents('.form-group').addClass('has-error');
         if ($('#error-message').length === 0) {
           $('form').prepend('<div id="error-message" class="alert alert-danger" role="alert">All questions are required.</div>');
         }
       } else {
+        failed = false;
         $('input[name="' + key + '"]').parents('.form-group').removeClass('has-error');
         questions[key] = $('input[name="' + key + '"]:checked').val();
         if($('#error-message')) {
@@ -81,12 +86,16 @@ $(document).ready(function() {
         }
       }
     }
+    if (failed) {
+      return;
+    }
+
     //call business logic
     var track = determine(questions);
 
-    //display results
     //hide form
     $('form').hide();
+
     //show appropriate track w/ description
     $('#' + track).css('display', 'flex');
   });
