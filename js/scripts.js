@@ -37,12 +37,14 @@ $(document).ready(function() {
   $('button[name="next"]').click(function() {
     $(this).parent().slideUp();
     $(this).parent().next().slideDown();
+    $('.progress-bar').append('<div class="progress-indicator pull-left"></div>');
   });
 
   //previous button to hide current '.question-content' div and show previous
   $('button[name="previous"]').click(function() {
     $(this).parent().slideUp();
     $(this).parent().prev().slideDown();
+    $('.progress-indicator:last-child').remove();
   });
 
   //submit button handler
