@@ -6,3 +6,11 @@
   color: #a94442;
   font-weight: bold;
 }
+
+#design, #php, #c, #ruby, #java, #design-caveat {
+  display: none;
+}
+
+.result div {
+  align-items: center;
+}

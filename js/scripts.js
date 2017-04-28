@@ -80,9 +80,12 @@ $(document).ready(function() {
       }
     }
     //call business logic
-    console.log(determine(questions));
+    var track = determine(questions);
+
     //display results
-      //hide form
-      //show appropriate track w/ description
+    //hide form
+    $('form').hide();
+    //show appropriate track w/ description
+    $('#' + track).css('display', 'flex');
   });
 });
