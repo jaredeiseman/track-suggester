@@ -77,6 +77,9 @@ $(document).ready(function() {
         if ($('#error-message').length === 0) {
           $('form').prepend('<div id="error-message" class="alert alert-danger" role="alert">All questions are required.</div>');
         }
+        $('.question-contents').hide();
+        $('.question-contents:first').show();
+        $('.progress-indicator').remove();
       } else {
         failed = false;
         $('input[name="' + key + '"]').parents('.form-group').removeClass('has-error');
