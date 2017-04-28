@@ -81,6 +81,9 @@ $(document).ready(function() {
         $('.question-contents:first').show();
         $('.progress-indicator').remove();
       } else {
+        if (failed && Object.keys(questions)[Object.keys(questions).length - 1] !== undefined) {
+          return;
+        }
         failed = false;
         $('input[name="' + key + '"]').parents('.form-group').removeClass('has-error');
         questions[key] = $('input[name="' + key + '"]:checked').val();
