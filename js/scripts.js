@@ -24,16 +24,32 @@ $(document).ready(function() {
     //block submission
     e.preventDefault();
 
-    //gather form values
-    var questionOne = $('input[name="question-one"]:checked').val();
-    var questionTwo = $('input[name="question-two"]:checked').val();
-    var questionThree = $('input[name="question-three"]:checked').val();
-    var questionFour = $('input[name="question-four"]:checked').val();
-    var questionFive = $('input[name="question-five"]:checked').val();
-    var questionSix = $('input[name="question-six"]:checked').val();
+    //gather form checked inputs
+    var questionOne = $('input[name="question-one"]:checked');
+    var questionTwo = $('input[name="question-two"]:checked');
+    var questionThree = $('input[name="question-three"]:checked');
+    var questionFour = $('input[name="question-four"]:checked');
+    var questionFive = $('input[name="question-five"]:checked');
+    var questionSix = $('input[name="question-six"]:checked');
 
     //form validate (bind?)
+    if (questionOne.val() === undefined) {
       //add has-error and messaging to divs missing a value
+      $('input[name="question-one"]').parents('.form-group').addClass('has-error');
+    } else if (questionTwo.val() === undefined) {
+      $('input[name="question-two"]').parents('.form-group').addClass('has-error');
+    } else if (questionThree.val() === undefined) {
+      $('input[name="question-three"]').parents('.form-group').addClass('has-error');
+    } else if (questionFour.val() === undefined) {
+      $('input[name="question-four"]').parents('.form-group').addClass('has-error');
+    } else if (questionFive.val() === undefined) {
+      $('input[name="question-five"]').parents('.form-group').addClass('has-error');
+    } else if (questionSix.val() === undefined) {
+      $('input[name="question-six"]').parents('.form-group').addClass('has-error');
+    } else {
+      $('.has-error').removeClass('has-error');
+    }
+
       //create error at top of page saying to fill out all questions
       //remove has-error/messaging from each question filled out after submit is clicked again
 
