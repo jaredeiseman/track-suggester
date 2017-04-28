@@ -20,9 +20,17 @@ $(document).ready(function() {
   });
 
   //submit button handler
+  $('form').submit(function(e) {
     //block submission
+    e.preventDefault();
 
     //gather form values
+    var questionOne = $('input[name="question-one"]:checked').val();
+    var questionTwo = $('input[name="question-two"]:checked').val();
+    var questionThree = $('input[name="question-three"]:checked').val();
+    var questionFour = $('input[name="question-four"]:checked').val();
+    var questionFive = $('input[name="question-five"]:checked').val();
+    var questionSix = $('input[name="question-six"]:checked').val();
 
     //form validate (bind?)
       //add has-error and messaging to divs missing a value
