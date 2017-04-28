@@ -2,6 +2,10 @@
   display: none;
 }
 
+#load-screen {
+  display: none;
+}
+
 .has-error h2 {
   color: #a94442;
   font-weight: bold;

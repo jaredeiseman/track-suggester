@@ -99,7 +99,19 @@ $(document).ready(function() {
     //hide form
     $('form').hide();
 
-    //show appropriate track w/ description
-    $('#' + track).css('display', 'flex');
+    //show load screen, animate it, then hide it then show appropriate track w/ description
+    $('#load-screen').fadeIn();
+    $('#load-screen div img').animate({  borderSpacing: -720 }, {
+      step: function(now,fx) {
+        $(this).css('-webkit-transform','rotate('+now+'deg)');
+        $(this).css('-moz-transform','rotate('+now+'deg)');
+        $(this).css('transform','rotate('+now+'deg)');
+      },
+      duration: 10000
+    },'linear');
+    setTimeout(function() {
+      $('#load-screen').hide();
+      $('#' + track).css('display', 'flex');
+    }, 10000);
   });
 });
