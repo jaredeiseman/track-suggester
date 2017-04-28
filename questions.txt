@@ -1,0 +1,23 @@
+Which is more important to you in regards to tools that you work with?
+- Aesthetics (design)
+- functionality (design or backend)
+
+When you think of functionality are you more concerned with:
+- a natural and intuitive experience with which you are interacting with (design)
+- What or how the features of the tool you are interacting with accomplish (backend)
+
+Are you more interested in working on mobile applications?
+- yes (java)
+- no (C#, Ruby, PHP)
+
+Do you enjoy working for large corporations?
+- yes (C#)
+- no (Ruby, PHP)
+
+Do you see yourself working on applications that:
+- help others create their own content (PHP)
+- enable the features other developers work on (Ruby)
+
+Was "I don't know" a more appropriate answer to any of these questions?
+- yes (design as it gives you an intro into other concepts that would help you branch into what you discover later)
+- no (ignore this logic)
