@@ -1,0 +1,3 @@
+.question-contents:nth-child(1n + 2) {
+  display: none;
+}
