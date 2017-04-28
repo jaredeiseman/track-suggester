@@ -2,6 +2,32 @@
 //                              BUSINESS LOGIC                                //
 ////////////////////////////////////////////////////////////////////////////////
 //determination logic
+var determine = function (questions) {
+  if (questions['question-six'] === 'design-caveat') {
+    return 'design-caveat';
+  }
+  if (questions['question-one'] === 'design') {
+    return 'design';
+  } else if (questions['question-one'] === 'design-backend') {
+    if (questions['question-two'] === 'design') {
+      return 'design';
+    } else {
+      if (questions['question-three'] === 'java') {
+        return 'java';
+      } else {
+        if (questions['question-four'] === 'c') {
+          return 'c';
+        } else {
+          if (questions['question-five'] === 'php') {
+            return 'php';
+          } else {
+            return 'ruby';
+          }
+        }
+      }
+    }
+  }
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 //                           USER INTERFACE LOGIC                             //
@@ -38,6 +64,7 @@ $(document).ready(function() {
       //loop to add bootstrap has-error class to each question that has no value
       //then reassign the value in the questions object to the value of the question
       //asked if passes validation
+      //create error at top of page saying to fill out all questions if fail/remove if pass
     for (var key in questions) {
       if (questions[key].val() === undefined) {
         $('input[name="' + key + '"]').parents('.form-group').addClass('has-error');
@@ -52,11 +79,8 @@ $(document).ready(function() {
         }
       }
     }
-      //create error at top of page saying to fill out all questions
-
-
     //call business logic
-
+    console.log(determine(questions));
     //display results
       //hide form
       //show appropriate track w/ description
