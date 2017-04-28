@@ -41,9 +41,15 @@ $(document).ready(function() {
     for (var key in questions) {
       if (questions[key].val() === undefined) {
         $('input[name="' + key + '"]').parents('.form-group').addClass('has-error');
+        if ($('#error-message').length === 0) {
+          $('form').prepend('<div id="error-message" class="alert alert-danger" role="alert">All questions are required.</div>');
+        }
       } else {
         $('input[name="' + key + '"]').parents('.form-group').removeClass('has-error');
         questions[key] = $('input[name="' + key + '"]:checked').val();
+        if($('#error-message')) {
+          $('#error-message').remove();
+        }
       }
     }
       //create error at top of page saying to fill out all questions
